@@ -1,33 +1,110 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
+.section{
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+@font-face {
+  font-family: 'BodoniFLF-Regular';
+  src: url('./static/fonts/Bodoni/BodoniFLF-Regular.ttf')
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@font-face {
+  font-family: 'GOTHICB';
+  src: url('./static/fonts/CB/GOTHICB.TTF')
+}
+
+@font-face {
+  font-family: 'gothicm';
+  src: url('./static/fonts/CB/gothicm.ttf')
+}
+
+.landing-page {
+  display: grid;
+  height: 100vh;
+  .kwazi-title {
+    text-align: center;
+    align-self: center;
+    h2 {
+      font-family: 'BodoniFLF-Regular';
+      font-size: 8rem;
+      letter-spacing: 5rem;
+      font-weight: 300;
+      margin: -120px 0px 0px 0;
+      padding:0;
+    }
+    .tag-line {
+      font-size: 2.5rem;
+      letter-spacing: 1.1rem;
+    }
   }
-  to {
-    transform: rotate(360deg);
+}
+
+.welcome-header-image {
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  display: grid;
+  .header-text {
+  font-family: 'GOTHICB';
+  text-align: center;
+  align-self: center;
+  font-size: 2rem;
+  letter-spacing: 1rem;
+  }
+}
+
+.page-section {
+  h3 {
+    text-align: center;
+    letter-spacing: 1rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+}
+
+p {
+  font-family: 'gothicm';
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.practice-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  grid-gap: 20px;
+}
+
+.practice-card {
+  background-color: #000000;
+  color: #fff;
+  padding: 20px;
+  .header {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+}
+
+.services-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  grid-gap: 20px;
+}
+
+.work-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+  grid-gap: 20px;
+}
+
+.work-with-us-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+  grid-gap: 20px;
+}
+
+.team-section {
+  .team-card {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 20px;
   }
 }
