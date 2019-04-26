@@ -1,14 +1,28 @@
 import React from 'react';
 
-function Zenith({ zenith }) {
+function Zenith({ zenith, hideEvent }) {
+    function hideBox() {
+        hideEvent();
+    }
     return (
         <div>
             {zenith !== undefined && (
                 <div className="container">
-                    <div className="zenith-section">
-                        <h3>{zenith.title}</h3>
-                        <p>{zenith.description}</p>
-                        <img src={require(`../static/images/${zenith.slug}.png`)} />
+                    <div className="page-title-head">
+                        <div className="right">
+                            <span className="cl">Z</span>
+                            <span className="sl">ENITH</span>
+                        </div>
+                        <div className="close-layer" onClick={hideBox} role="presentation">
+                            X
+                        </div>
+                    </div>
+                    <div className="page-content">
+                        <h3 className="zenith-title">{zenith.title}</h3>
+                        <div className="zenith-section">
+                            <p>{zenith.description}</p>
+                            <img src={require(`../static/images/${zenith.slug}.png`)} />
+                        </div>
                     </div>
                 </div>
             )}

@@ -1,5 +1,70 @@
-.section{
+body {
+  max-width: 1200px;
+  margin: 0px auto;
+
+}
+
+.landing-section {
   min-height: 100vh;
+}
+
+// https://codepen.io/bastianalbers/pen/PWBYvz
+
+.section {
+  min-height: 100vh;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: #fff
+}
+
+
+.section-inner {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 5%;
+  bottom: 5%;
+  margin: auto;
+  background: white;
+
+  .page-content {
+    overflow-y: scroll;
+    height: calc(100vh - 150px);
+    border-bottom: 2px solid #000;
+    margin-top: 40px;
+    padding: 0px 30px;
+  }
+}
+
+.page-title-head {
+  border-bottom: 2px solid #000;
+  display: grid;
+  grid-template-columns: auto 50px;
+
+  .close-layer {
+    align-self: center;
+    cursor: pointer;
+    font-family: 'GOTHICB';
+  }
+
+}
+
+.page-title-head .cl {
+  font-size: 4rem;
+  font-family: 'BodoniFLF-Regular';
+  line-height: 3rem;
+}
+
+.page-title-head .sl {
+  font-family: 'gothicm';
+  font-size: 1.2rem;
+  text-transform: uppercase;
 }
 
 @font-face {
@@ -20,17 +85,46 @@
 .landing-page {
   display: grid;
   height: 100vh;
+
   .kwazi-title {
     text-align: center;
     align-self: center;
+
     h2 {
       font-family: 'BodoniFLF-Regular';
       font-size: 8rem;
-      letter-spacing: 5rem;
       font-weight: 300;
       margin: -120px 0px 0px 0;
-      padding:0;
+      padding: 0;
+      border-bottom: 5px solid #000;
+      display: inline-block;
+      line-height: 4.5rem;
+
+      span {
+        cursor: pointer;
+
+        &:nth-of-type(1) {
+          padding-right: 30px;
+        }
+
+        &:nth-of-type(2) {
+          padding: 0px 60px;
+        }
+
+        &:nth-of-type(3) {
+          padding: 0px 60px;
+        }
+
+        &:nth-of-type(4) {
+          padding: 0px 60px;
+        }
+
+        &:nth-of-type(5) {
+          padding-left: 30px;
+        }
+      }
     }
+
     .tag-line {
       font-size: 2.5rem;
       letter-spacing: 1.1rem;
@@ -43,13 +137,19 @@
   background-position: center;
   background-size: cover;
   display: grid;
+
   .header-text {
-  font-family: 'GOTHICB';
-  text-align: center;
-  align-self: center;
+    font-family: 'GOTHICB';
+    text-align: center;
+    align-self: center;
+    letter-spacing: 1rem;
+  }
+}
+
+h3 {
+
   font-size: 2rem;
   letter-spacing: 1rem;
-  }
 }
 
 .page-section {
@@ -58,6 +158,194 @@
     letter-spacing: 1rem;
     font-size: 1.5rem;
     text-transform: uppercase;
+    padding: 20px 0px;
+  }
+
+  p {
+    font-family: 'gothicm';
+
+  }
+}
+
+.practice-section {
+  .practice-card {
+    .header {
+      .title {
+        transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        position: relative;
+        top: -31px;
+        left: -40px;
+        text-transform: uppercase;
+        font-family: 'GOTHICB';
+      }
+
+      .icon {
+        height: 80px;
+
+        img {
+          width: 60px;
+          display: grid;
+          align-self: center;
+        }
+      }
+    }
+
+    .content {
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.services-section {
+  .services-card {
+    text-align: center;
+
+    .icon {
+      img {
+        height: 100px;
+      }
+    }
+
+    .service-card-title {
+      padding: 30px 0px;
+      font-family: 'gothicm';
+    }
+  }
+}
+
+.work-page-section {
+  width: 80%;
+  margin: auto;
+  padding-bottom: 40px;
+}
+
+.work-section {
+  .work-card {
+    text-align: center;
+
+    .title {
+      font-family: 'GOTHICB';
+    }
+
+    .type {
+
+      font-family: 'gothicm';
+      font-size: 13px;
+    }
+  }
+}
+
+.about-us-section {
+
+  width: 80%;
+  margin: auto;
+  padding-bottom: 40px;
+
+  h3 {
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'GOTHICB';
+  }
+
+  .work-with-us-section {
+    padding: 40px 0px;
+
+    .value-card {
+      text-align: center;
+
+      .thumbnail {
+        img {
+          height: 120px;
+        }
+      }
+
+      .title {
+        font-family: 'gothicm';
+        padding: 30px 0px;
+      }
+    }
+  }
+
+  .team-section {
+    padding: 20px 0px;
+
+    .team-card {
+      .thumbnail {
+        text-align: center;
+        padding: 20px;
+
+        img {
+          width: 300px;
+        }
+      }
+
+      .content {
+        text-align: center;
+        display: grid;
+        align-self: center;
+
+        .name {
+          font-family: 'GOTHICB';
+
+        }
+
+        .position {
+          font-family: 'gothicm';
+
+        }
+
+        .about {
+          font-family: 'gothicm';
+          padding: 40px 40px 0px 40px;
+          line-height: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+.zenith-title {
+  text-align: center;
+  font-family: 'GOTHICB';
+  font-size: 2rem;
+  letter-spacing: 1rem;
+
+}
+
+.zenith-section {
+  width: 80%;
+  margin: 0px auto;
+  display: grid;
+  grid-template-columns: 60% 40%;
+
+  img {
+    max-width: 300px;
+  }
+}
+
+
+.i-am-bored-container {
+  width: 80%;
+  margin: 0px auto;
+}
+
+.i-am-bored-section {
+  padding-bottom: 40px;
+
+  .bored-card {
+    text-align: center;
+
+    .title {
+      font-family: 'GOTHICB';
+      font-size: 1rem;
+      padding: 20px;
+    }
   }
 }
 
@@ -69,7 +357,7 @@ p {
 
 .practice-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 20px;
 }
 
@@ -77,6 +365,7 @@ p {
   background-color: #000000;
   color: #fff;
   padding: 20px;
+
   .header {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -85,26 +374,32 @@ p {
 
 .services-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 20px;
 }
 
 .work-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 20px;
 }
 
 .work-with-us-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+
+.i-am-bored-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 20px;
 }
 
 .team-section {
   .team-card {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 40% 60%;
     grid-gap: 20px;
   }
 }

@@ -1,34 +1,32 @@
 import React from 'react';
 
-function Work({ work, hideEvent }) {
+function ImBored({ iMBored, hideEvent }) {
     function hideBox() {
         hideEvent();
     }
     return (
         <div>
-            {work !== undefined && (
+            {iMBored !== undefined && (
                 <div className="container">
                     <div className="page-title-head">
                         <div className="right">
-                            <span className="cl">W</span>
-                            <span className="sl">ork</span>
+                            <span className="cl">I</span>
+                            <span className="sl">'M BORED</span>
                         </div>
                         <div className="close-layer" onClick={hideBox} role="presentation">
                             X
                         </div>
                     </div>
                     <div className="page-content">
-                        <div className="page-section work-page-section">
-                            <h3>{work.title}</h3>
-                            <p>{work.description}</p>
-                            <div className="work-section">
-                                {work.projects.map((item, key) => (
-                                    <div className="work-card" key={key}>
+                        <div className="page-section i-am-bored-container">
+                            <h3>{iMBored.title}</h3>
+                            <div className="i-am-bored-section">
+                                {iMBored.list.map((item, key) => (
+                                    <div className="bored-card" key={key}>
                                         <div className="thumbnail">
                                             <img src={require(`../static/images/${item.slug}.png`)} alt={item.name} />
                                         </div>
-                                        <div className="title">{item.name}</div>
-                                        <div className="type">{item.type}</div>
+                                        <div className="title">{item.title}</div>
                                     </div>
                                 ))}
                             </div>
@@ -40,4 +38,4 @@ function Work({ work, hideEvent }) {
     );
 }
 
-export default Work;
+export default ImBored;
