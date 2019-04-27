@@ -7,7 +7,7 @@ function ImBored({ iMBored, hideEvent }) {
     return (
         <div>
             {iMBored !== undefined && (
-                <div className="container">
+                <div className="container modal">
                     <div className="page-title-head">
                         <div className="right">
                             <span className="cl">I</span>

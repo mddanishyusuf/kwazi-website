@@ -7,7 +7,7 @@ function Work({ work, hideEvent }) {
     return (
         <div>
             {work !== undefined && (
-                <div className="container">
+                <div className="container modal">
                     <div className="page-title-head">
                         <div className="right">
                             <span className="cl">W</span>

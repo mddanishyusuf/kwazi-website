@@ -8,7 +8,7 @@ function WhoWeAre({ whoWeAre, hideEvent }) {
     return (
         <div>
             {whoWeAre !== undefined && (
-                <div className="container">
+                <div className="container modal">
                     <div className="page-title-head">
                         <div className="right">
                             <span className="cl">K</span>

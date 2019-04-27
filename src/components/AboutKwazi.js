@@ -8,7 +8,7 @@ function AboutKwazi({ aboutUs, hideEvent }) {
     return (
         <div>
             {aboutUs !== undefined && (
-                <div className="container">
+                <div className="container modal">
                     <div className="page-title-head">
                         <div className="right">
                             <span className="cl">A</span>
@@ -21,6 +21,22 @@ function AboutKwazi({ aboutUs, hideEvent }) {
                     <div className="page-content">
                         <div className="about-us-section">
                             <h3>{aboutUs.title}</h3>
+                            <div className="about-kwazi-word">
+                                qua·​si | \ ˈkwä-zē
+                                <br />
+                                <br />
+                                <i>combining form:</i>
+                                <br />
+                                <span style={{ opacity: 0.5 }}>
+                                    prefix: <b>Quasi-</b>
+                                </span>
+                                <br />
+                                apparently but not really; seemingly
+                                <br />
+                                <span className="text-bold">
+                                    Reflective of the quality to be something you yet aren’t.
+                                </span>
+                            </div>
                             <p>{aboutUs.description}</p>
                             <h3>{aboutUs.workWithUs.title}</h3>
                             <div className="work-with-us-section">

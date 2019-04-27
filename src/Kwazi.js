@@ -6,8 +6,10 @@ import Work from './components/Work';
 import AboutKwazi from './components/AboutKwazi';
 import Zenith from './components/Zenith';
 import ImBored from './components/ImBored';
+import ContactUs from './components/ContactUs';
 
 import './app.scss';
+import './static/animation.scss';
 
 function Kwazi() {
     const [data, setData] = useState({});
@@ -38,7 +40,6 @@ function Kwazi() {
         e.preventDefault();
         console.log(e.target.getAttribute('name'));
         setWhichLayer(e.target.getAttribute('name'));
-        console.log('hi');
     }
 
     function hideLayer() {
@@ -48,8 +49,8 @@ function Kwazi() {
     return (
         <div className="container">
             <div className="who-we-are landing-section">
-                <div className="landing-page">
-                    <div className="kwazi-title">
+                <div className="landing-page wrapper">
+                    <div className="kwazi-title text-animation">
                         <h2>
                             <span name="WhoWeAre" onClick={clickOnLetter} role="presentation">
                                 K
@@ -72,45 +73,69 @@ function Kwazi() {
                 </div>
             </div>
             {whichLayer === 'WhoWeAre' ? (
-                <div className="who-we-are section collapsed" onClick={hideLayer} role="presentation">
-                    <div className="section-inner">
+                <div className="who-we-are section four" id="modal-container">
+                    <div className="section-inner modal-background">
                         <WhoWeAre {...data} hideEvent={hideLayer} />
+                        <div className="contact-us" name="ContactUs" onClick={clickOnLetter} role="presentation">
+                            Contact Us
+                        </div>
                     </div>
                 </div>
             ) : (
                 ''
             )}
             {whichLayer === 'Work' ? (
-                <div className="kwazi-work section" onClick={hideLayer} role="presentation">
-                    <div className="section-inner">
+                <div className="kwazi-work section four" id="modal-container">
+                    <div className="section-inner modal-background">
                         <Work {...data} hideEvent={hideLayer} />
+                        <div className="contact-us" name="ContactUs" onClick={clickOnLetter} role="presentation">
+                            Contact Us
+                        </div>
                     </div>
                 </div>
             ) : (
                 ''
             )}
             {whichLayer === 'AboutKwazi' ? (
-                <div className="about-kwazi section" role="presentation">
-                    <div className="section-inner">
+                <div className="about-kwazi section four" id="modal-container">
+                    <div className="section-inner modal-background">
                         <AboutKwazi {...data} hideEvent={hideLayer} />
+                        <div className="contact-us" name="ContactUs" onClick={clickOnLetter} role="presentation">
+                            Contact Us
+                        </div>
                     </div>
                 </div>
             ) : (
                 ''
             )}
             {whichLayer === 'Zenith' ? (
-                <div className="zenith section" onClick={hideLayer} role="presentation">
-                    <div className="section-inner">
+                <div className="zenith section four" id="modal-container">
+                    <div className="section-inner modal-background">
                         <Zenith {...data} hideEvent={hideLayer} />
+                        <div className="contact-us" name="ContactUs" onClick={clickOnLetter} role="presentation">
+                            Contact Us
+                        </div>
                     </div>
                 </div>
             ) : (
                 ''
             )}
             {whichLayer === 'ImBored' ? (
-                <div className="i-am-board section" onClick={hideLayer} role="presentation">
-                    <div className="section-inner">
+                <div className="i-am-board section four" id="modal-container">
+                    <div className="section-inner modal-background">
                         <ImBored {...data} hideEvent={hideLayer} />
+                        <div className="contact-us" name="ContactUs" onClick={clickOnLetter} role="presentation">
+                            Contact Us
+                        </div>
+                    </div>
+                </div>
+            ) : (
+                ''
+            )}
+            {whichLayer === 'ContactUs' ? (
+                <div className="i-am-board section four" id="modal-container">
+                    <div className="section-inner modal-background">
+                        <ContactUs {...data} hideEvent={hideLayer} />
                     </div>
                 </div>
             ) : (
