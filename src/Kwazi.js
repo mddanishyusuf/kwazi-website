@@ -52,21 +52,26 @@ function Kwazi() {
                 <div className="landing-page wrapper">
                     <div className="kwazi-title text-animation">
                         <h2>
-                            <span name="WhoWeAre" onClick={clickOnLetter} role="presentation">
-                                K
-                            </span>
-                            <span name="Work" onClick={clickOnLetter} role="presentation">
-                                W
-                            </span>
-                            <span name="AboutKwazi" onClick={clickOnLetter} role="presentation">
-                                A
-                            </span>
-                            <span name="Zenith" onClick={clickOnLetter} role="presentation">
-                                Z
-                            </span>
-                            <span name="ImBored" onClick={clickOnLetter} role="presentation">
-                                I
-                            </span>
+                            <div className="logo-title">
+                                <span name="WhoWeAre" onClick={clickOnLetter} role="presentation">
+                                    K
+                                </span>
+                                <span name="Work" onClick={clickOnLetter} role="presentation">
+                                    W
+                                </span>
+                                <span name="AboutKwazi" onClick={clickOnLetter} role="presentation">
+                                    A
+                                </span>
+                                <span name="Blog" onClick={clickOnLetter} role="presentation">
+                                    :
+                                </span>
+                                <span name="Zenith" onClick={clickOnLetter} role="presentation">
+                                    Z
+                                </span>
+                                <span name="ImBored" onClick={clickOnLetter} role="presentation">
+                                    I
+                                </span>
+                            </div>
                         </h2>
                         <div className="tag-line">branding & design humans</div>
                     </div>

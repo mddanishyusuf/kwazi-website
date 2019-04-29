@@ -5,6 +5,7 @@ function WhoWeAre({ whoWeAre, hideEvent }) {
     function hideBox() {
         hideEvent();
     }
+
     return (
         <div>
             {whoWeAre !== undefined && (
@@ -24,7 +25,7 @@ function WhoWeAre({ whoWeAre, hideEvent }) {
                         </div>
                         <div className="page-section">
                             <h3>{whoWeAre.title}</h3>
-                            <p>{whoWeAre.description}</p>
+                            <p className="p-container">{whoWeAre.description}</p>
                             <h3>OUR BRANDING & DESIGN PRACTICE</h3>
                             <div className="practice-section">
                                 {whoWeAre.practice.map((item, key) => (
@@ -39,7 +40,7 @@ function WhoWeAre({ whoWeAre, hideEvent }) {
                                             </div>
                                         </div>
                                         <div className="content">
-                                            <p>{item.description}</p>
+                                            <p dangerouslySetInnerHTML={{ __html: item.description }} />
                                         </div>
                                     </div>
                                 ))}

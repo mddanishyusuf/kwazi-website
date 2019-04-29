@@ -19,13 +19,22 @@ function ContactUs({ work, hideEvent }) {
                         <div className="page-section work-page-section">
                             <h3>Contact Us</h3>
                             <Formik
-                                initialValues={{ email: '', password: '' }}
+                                initialValues={{ email: '', name: '', phone: '', service: '' }}
                                 validate={values => {
                                     const errors = {};
                                     if (!values.email) {
                                         errors.email = 'Required';
                                     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
                                         errors.email = 'Invalid email address';
+                                    }
+                                    if (!values.name) {
+                                        errors.name = 'Required';
+                                    }
+                                    if (!values.phone) {
+                                        errors.phone = 'Required';
+                                    }
+                                    if (!values.service) {
+                                        errors.service = 'Required';
                                     }
                                     return errors;
                                 }}
@@ -47,48 +56,77 @@ function ContactUs({ work, hideEvent }) {
                                     /* and other goodies */
                                 }) => (
                                     <form onSubmit={handleSubmit}>
-                                        <input
-                                            type="text"
-                                            name="name"
-                                            placeholder="Name"
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            value={values.name}
-                                        />
-                                        {errors.name && touched.name && errors.name}
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            placeholder="Email"
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            value={values.email}
-                                        />
-                                        {errors.email && touched.email && errors.email}
-                                        <input
-                                            type="number"
-                                            name="phone"
-                                            placeholder="Phone"
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            value={values.phone}
-                                        />
-                                        {errors.phone && touched.phone && errors.phone}
-                                        <input
-                                            type="text"
-                                            name="service"
-                                            placeholder="Service"
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            value={values.password}
-                                        />
-                                        {errors.service && touched.service && errors.service}
+                                        <div className="input-field">
+                                            <label id="name">Name</label>
+                                            <br />
+                                            <input
+                                                type="text"
+                                                name="name"
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                value={values.name}
+                                            />
+                                            <br />
+                                            <span>{errors.name && touched.name && errors.name}</span>
+                                        </div>
+                                        <div className="input-field">
+                                            <label id="name">Email</label>
+                                            <br />
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                value={values.email}
+                                            />
+                                            <br />
+                                            <span>{errors.email && touched.email && errors.email}</span>
+                                        </div>
+                                        <div className="input-field">
+                                            <label id="name">Phone</label>
+                                            <br />
+                                            <input
+                                                type="text"
+                                                name="phone"
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                value={values.phone}
+                                            />
+                                            <br />
+                                            <span>{errors.phone && touched.phone && errors.phone}</span>
+                                        </div>
+                                        <div className="input-field">
+                                            <label id="name">Service</label>
+                                            <br />
+                                            <input
+                                                type="text"
+                                                name="service"
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                value={values.password}
+                                            />
+                                            <br />
+                                            <span>{errors.service && touched.service && errors.service}</span>
+                                        </div>
                                         <button type="submit" disabled={isSubmitting}>
                                             Submit
                                         </button>
                                     </form>
                                 )}
                             </Formik>
+                            <h3>Follow Us</h3>
+
+                            <div className="social-icons">
+                                <a href="https://linkedin.com" target="_blank" rel="noreferrer noopener">
+                                    <img src={require(`../static/images/LinkedIn Icon@2x.png`)} alt="LinkedIn" />
+                                </a>
+                                <a href="https://linkedin.com" target="_blank" rel="noreferrer noopener">
+                                    <img src={require(`../static/images/Instagram Icon@2x.png`)} alt="Instagram" />
+                                </a>
+                                <a href="https://linkedin.com" target="_blank" rel="noreferrer noopener">
+                                    <img src={require(`../static/images/Spotify_Icon@2x.png`)} alt="Spotify" />
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

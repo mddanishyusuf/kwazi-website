@@ -52,7 +52,7 @@ function AboutKwazi({ aboutUs, hideEvent }) {
                             <h3>WHO'S WHO?</h3>
                             <div className="team-section">
                                 {aboutUs.team.map((item, key) => (
-                                    <div className="team-card" key={key}>
+                                    <div className={key === 1 ? 'team-card second-team-card' : 'team-card'} key={key}>
                                         <div className="thumbnail">
                                             <img src={require(`../static/images/${item.slug}.png`)} alt={item.name} />
                                         </div>
