@@ -9,29 +9,21 @@ body {
 }
 
 
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #F5F5F5;
-}
-
 ::-webkit-scrollbar {
   width: 5px;
-  background-color: #F5F5F5;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: #000000;
-  border: 1px solid #555555;
+  height: 50px;
 }
 
 ::-moz-scrollbar-thumb {
   background-color: #000000;
-  border: 1px solid #555555;
 }
 
 * {
-  scrollbar-color: #000000 #F5F5F5;
+  scrollbar-color: #000000 ;
   scrollbar-width: thin;
 }
 
@@ -58,14 +50,19 @@ body {
 
 .section-inner {
   position: absolute;
-  left: 5%;
-  right: 5%;
+  left: 10%;
+  right: 10%;
   top: 5%;
   bottom: 5%;
   margin: auto;
   background: white;
   transition: height 3s;
-
+  @media screen and (max-width: 800px) {
+    left: 5%;
+    right: 5%;
+    top: 5%;
+    bottom: 5%;
+  }
   .page-content {
     overflow-y: scroll;
     height: calc(100vh - 200px);
@@ -176,7 +173,8 @@ body {
 .page-title-head .cl {
   font-size: 5rem;
   font-family: 'BodoniFLF-Regular';
-  line-height: 4rem;
+  line-height: 4.5rem;
+  letter-spacing: -6px;
 }
 
 .page-title-head .right {
@@ -186,7 +184,7 @@ body {
 }
 
 .page-title-head .sl {
-  font-family: 'gothicm';
+  font-family: 'BodoniFLF-Regular';
   font-size: 1.2rem;
   text-transform: uppercase;
   position: absolute;
@@ -268,19 +266,19 @@ body {
           }
 
           &:nth-of-type(2) {
-            padding: 0px 60px;
+            padding: 0px 50px;
           }
 
           &:nth-of-type(3) {
-            padding: 0px 60px;
+            padding: 0px 50px;
           }
 
           &:nth-of-type(4) {
-            padding: 0px 60px;
+            padding: 0px 50px;
           }
 
           &:nth-of-type(5) {
-            padding: 0px 60px;
+            padding: 0px 50px;
           }
 
           &:nth-of-type(6) {
@@ -294,9 +292,10 @@ body {
 
     .tag-line {
       font-size: 2.5rem;
-      letter-spacing: 1.3rem;
+      letter-spacing: 1.15rem;
       margin-right: -0.5em;
 
+  font-family: 'BodoniFLF-Regular';
       @media screen and (max-width: 800px) {
         font-size: 1rem;
         letter-spacing: 0.7rem;
@@ -362,29 +361,6 @@ body {
       }
     }
 
-
-
-    &:hover {
-      text-decoration: none;
-      color: red;
-
-      &:before {
-        transform: translate3d(0, 0, 0);
-      }
-
-      span {
-        color: rgb(133, 129, 129);
-        transform: rotate3d(0, 1, 0, 0deg);
-        transition: transform 1.4s, color 0.2s ease-in;
-
-        @for $i from 1 through 5 {
-          &:nth-child(#{$i}) {
-            transition-delay: #{$i * .2}s
-          }
-        }
-      }
-    }
-
     //  &:before {
     //    content: '';
     //    position: absolute;
@@ -446,11 +422,12 @@ h3 {
         -moz-transform: rotate(-90deg);
         -ms-transform: rotate(-90deg);
         -o-transform: rotate(-90deg);
-        position: relative;
-        top: -31px;
-        left: -40px;
+        position: absolute;
+        top: 20px;
+        left: -30px;
         text-transform: uppercase;
         font-family: 'GOTHICB';
+        font-size: 16px;
       }
 
       .icon {
@@ -485,14 +462,14 @@ h3 {
     .service-card-title {
       padding: 30px 0px;
       font-family: 'gothicm';
-      width: 50%;
+      width: 60%;
       margin: 0 auto;
     }
   }
 }
 
 .work-page-section {
-  width: 80%;
+  width: 90%;
   margin: auto;
   padding-bottom: 40px;
 }
@@ -501,7 +478,11 @@ h3 {
   .work-card {
     text-align: center;
     padding-bottom: 20px;
-
+    .thumbnail {
+      img {
+        width: 100%;
+      }
+    }
     .title {
       font-family: 'GOTHICB';
       padding-top: 20px;
@@ -517,7 +498,7 @@ h3 {
 
 .about-us-section {
 
-  width: 80%;
+  width: 90%;
   margin: auto;
   padding-bottom: 40px;
 
@@ -560,8 +541,12 @@ h3 {
 
     .content {
       order: 1;
+      .about{
+        text-align: left !important;
+      }
     }
 
+    
     .thumbnail {
       order: 2;
       text-align: center;
@@ -591,19 +576,20 @@ h3 {
 
         .name {
           font-family: 'GOTHICB';
+          letter-spacing: 0.6rem;
 
         }
 
         .position {
           font-family: 'gothicm';
-
+          font-size: 0.9rem;
         }
 
         .about {
           font-family: 'gothicm';
           padding: 40px 40px 0px 40px;
           line-height: 1.5rem;
-
+          text-align: right;
           @media screen and (max-width: 800px) {
             padding: 40px 0px 40px 0px;
           }
@@ -670,24 +656,28 @@ p {
 
 .practice-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 20px;
 }
 
 .practice-card {
   background-color: #000000;
   color: #fff;
-  padding: 20px;
+  padding: 20px 20px 0px 20px;
 
   .header {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 100%;
+    position: relative;
+    .icon{
+      justify-self: end
+    }
   }
 }
 
 .services-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 20px;
 }
 

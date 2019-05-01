@@ -21,6 +21,8 @@ function Work({ work, hideEvent }) {
                         <div className="page-section work-page-section">
                             <h3>{work.title}</h3>
                             <p>{work.description}</p>
+                            <br />
+                            <br />
                             <div className="work-section">
                                 {work.projects.map((item, key) => (
                                     <div className="work-card" key={key}>
