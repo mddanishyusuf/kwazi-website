@@ -5,8 +5,16 @@ function AboutKwazi({ aboutUs, hideEvent }) {
         hideEvent();
     }
 
+    function playMusic() {
+        document.getElementById('linkAudio').play();
+    }
+
     return (
         <div>
+            <audio controls id="linkAudio">
+                <source src={require(`../static/kwazi-pronunciation.mp3`)} type="audio/mpeg" />
+                Your browser does not support the audio element.
+            </audio>
             {aboutUs !== undefined && (
                 <div className="container modal">
                     <div className="page-title-head">
@@ -22,7 +30,10 @@ function AboutKwazi({ aboutUs, hideEvent }) {
                         <div className="about-us-section">
                             <h3>{aboutUs.title}</h3>
                             <div className="about-kwazi-word">
-                                qua·​si | \ ˈkwä-zē
+                                qua·​si | \ ˈkwä-zē{' '}
+                                <span onClick={playMusic} role="presentation" className="kwazi-pron">
+                                    🔊
+                                </span>
                                 <br />
                                 <br />
                                 <i>combining form:</i>

@@ -51,7 +51,19 @@ function WhoWeAre({ whoWeAre, hideEvent }) {
                             <br />
                             <br />
                             <div className="services-section">
-                                {whoWeAre.services.map((item, key) => (
+                                {whoWeAre.services.slice(0, 4).map((item, key) => (
+                                    <div className="services-card" key={key}>
+                                        <div className="icon">
+                                            <img src={require(`../static/images/${item.slug}.png`)} alt={item.slug} />
+                                        </div>
+                                        <div className="service-card-title">{item.name}</div>
+                                    </div>
+                                ))}
+                            </div>
+                            <br />
+                            <br />
+                            <div className="services-section">
+                                {whoWeAre.services.slice(4, 7).map((item, key) => (
                                     <div className="services-card" key={key}>
                                         <div className="icon">
                                             <img src={require(`../static/images/${item.slug}.png`)} alt={item.slug} />

@@ -5,7 +5,6 @@ html {
 body {
   max-width: 1200px;
   margin: 0px auto;
-
 }
 
 
@@ -23,7 +22,7 @@ body {
 }
 
 * {
-  scrollbar-color: #000000 ;
+  scrollbar-color: #000000;
   scrollbar-width: thin;
 }
 
@@ -57,12 +56,14 @@ body {
   margin: auto;
   background: white;
   transition: height 3s;
+
   @media screen and (max-width: 800px) {
     left: 5%;
     right: 5%;
     top: 5%;
     bottom: 5%;
   }
+
   .page-content {
     overflow-y: scroll;
     height: calc(100vh - 200px);
@@ -295,7 +296,8 @@ body {
       letter-spacing: 1.15rem;
       margin-right: -0.5em;
 
-  font-family: 'BodoniFLF-Regular';
+      font-family: 'BodoniFLF-Regular';
+
       @media screen and (max-width: 800px) {
         font-size: 1rem;
         letter-spacing: 0.7rem;
@@ -478,11 +480,13 @@ h3 {
   .work-card {
     text-align: center;
     padding-bottom: 20px;
+
     .thumbnail {
       img {
         width: 100%;
       }
     }
+
     .title {
       font-family: 'GOTHICB';
       padding-top: 20px;
@@ -541,12 +545,13 @@ h3 {
 
     .content {
       order: 1;
-      .about{
+
+      .about {
         text-align: left !important;
       }
     }
 
-    
+
     .thumbnail {
       order: 2;
       text-align: center;
@@ -590,6 +595,7 @@ h3 {
           padding: 40px 40px 0px 40px;
           line-height: 1.5rem;
           text-align: right;
+
           @media screen and (max-width: 800px) {
             padding: 40px 0px 40px 0px;
           }
@@ -669,34 +675,97 @@ p {
     display: grid;
     grid-template-columns: 100%;
     position: relative;
-    .icon{
+
+    .icon {
       justify-self: end
     }
   }
 }
 
+#cf {
+  position: relative;
+  height: 340px;
+  margin: 0 auto;
+}
+
+#cf img {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  cursor: pointer;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+#cf img.top:hover {
+  opacity: 0;
+}
+
+.kwazi-pron {
+  cursor: pointer;
+}
+
+.project-info-container {
+  position: absolute;
+  top: 60px;
+  z-index: 9;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  background-color: #fff;
+
+  .details-inner {
+    padding: 120px;
+
+    .details-header {
+      display: grid;
+      grid-template-columns: 30% 70%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+#linkAudio {
+  position: absolute;
+  top: -999px;
+}
+
 .services-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 20px;
+  grid-gap: 60px;
+  max-width: 1200px;
+  margin: 0px auto;
 }
 
 .work-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 20px;
+  max-width: 1200px;
+  margin: 0px auto;
 }
 
 .work-with-us-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 20px;
+  max-width: 1200px;
+  margin: 0px auto;
 }
 
 .i-am-bored-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 20px;
+  max-width: 1200px;
+  margin: 0px auto;
 }
 
 .team-section {
