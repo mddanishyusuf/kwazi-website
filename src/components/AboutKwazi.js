@@ -23,7 +23,7 @@ function AboutKwazi({ aboutUs, hideEvent }) {
                             <span className="sl">BOUT US</span>
                         </div>
                         <div className="close-layer" onClick={hideBox} role="presentation">
-                            X
+                            <img src={require(`../static/images/close-icon.png`)} alt="close page" />
                         </div>
                     </div>
                     <div className="page-content">

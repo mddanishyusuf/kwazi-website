@@ -14,7 +14,7 @@ function Zenith({ zenith, hideEvent }) {
                             <span className="sl">ENITH</span>
                         </div>
                         <div className="close-layer" onClick={hideBox} role="presentation">
-                            X
+                            <img src={require(`../static/images/close-icon.png`)} alt="close page" />
                         </div>
                     </div>
                     <div className="page-content">

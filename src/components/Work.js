@@ -6,11 +6,28 @@ function Work({ work, hideEvent }) {
     }
 
     const [activeProject, setActiveProject] = useState(null);
+    const [viewImage, setViewImage] = useState(null);
+    const [activeImageIndex, setActiveImageIndex] = useState(null);
 
     const showProject = (details, e) => {
         e.preventDefault();
         setActiveProject(details);
     };
+
+    function hideProjectBox() {
+        setActiveProject(null);
+    }
+
+    const viewThisImage = (imgObj, key, e) => {
+        setActiveImageIndex(key);
+        e.preventDefault();
+        setViewImage(imgObj);
+    };
+
+    function closePopupImage() {
+        setViewImage(null);
+    }
+
     return (
         <div>
             {work !== undefined && (
@@ -21,7 +38,7 @@ function Work({ work, hideEvent }) {
                             <span className="sl">ork</span>
                         </div>
                         <div className="close-layer" onClick={hideBox} role="presentation">
-                            X
+                            <img src={require(`../static/images/close-icon.png`)} alt="close page" />
                         </div>
                     </div>
                     <div className="page-content">
@@ -55,25 +72,78 @@ function Work({ work, hideEvent }) {
                                     </div>
                                 ))}
                             </div>
+                            {viewImage !== null && (
+                                <div className="overlay open">
+                                    <div className="overlay-inner">
+                                        <button className="close" onClick={closePopupImage}>
+                                            × Close
+                                        </button>
+                                        <img
+                                            src={require(`../static/images/projects/${viewImage.image}`)}
+                                            alt={viewImage.name}
+                                        />
+                                        <ul className="carousal-pagination">
+                                            {activeProject.images.map((obj, key) => (
+                                                <li
+                                                    onClick={viewThisImage.bind(this, obj, key)}
+                                                    role="presentation"
+                                                    key={key}
+                                                    className={activeImageIndex === key && 'active'}
+                                                />
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+                            )}
                             {activeProject !== null && (
                                 <div className="project-info-container">
                                     <div className="project-details">
                                         <div className="details-inner">
+                                            <div className="back-btn" onClick={hideProjectBox} role="presentation">
+                                                Back
+                                            </div>
                                             <div className="details-header">
-                                                <img src={require(`../static/images/projects/marzano.jpg`)} />
+                                                <img
+                                                    src={require(`../static/images/projects/${activeProject.image}`)}
+                                                    alt={activeProject.name}
+                                                />
                                                 <div className="content">
-                                                    <h3>Marzano</h3>
-                                                    <p>
-                                                        We work to fulfill and not simply fill. That often reflects in
-                                                        our work and the practices we follow. Each of clients is our
-                                                        priority, none more or less than the other. We work with
-                                                        businesses that truly believe in their offerings and their value
-                                                        to the customers. Steering clear of gibberish, we like creating
-                                                        immersive and well-thought brand experiences, that positively
-                                                        impacts our clients lives and subsequently their clients’
-                                                    </p>
-                                                    z
+                                                    <h3>{activeProject.name}</h3>
+                                                    <small>
+                                                        <b>{activeProject.brandingTags}</b>
+                                                    </small>
+                                                    <p>{activeProject.story}</p>
                                                 </div>
+                                            </div>
+                                            <div className="project-banner">
+                                                <img
+                                                    src={require(`../static/images/projects/marzano-banner.jpg`)}
+                                                    alt="Project Banner"
+                                                />
+                                            </div>
+                                            <div className="gallery">
+                                                {activeProject.images.map((obj, key) => (
+                                                    <div key={key}>
+                                                        <div
+                                                            className="item h3 v3"
+                                                            onClick={viewThisImage.bind(this, obj, key)}
+                                                            role="presentation"
+                                                        >
+                                                            <div
+                                                                className="project-image-bg"
+                                                                style={{
+                                                                    backgroundImage: `url(${require(`../static/images/projects/${
+                                                                        obj.image
+                                                                    }`)})`,
+                                                                }}
+                                                            />
+                                                            <div className="item__overlay">
+                                                                <button>View →</button>
+                                                            </div>
+                                                        </div>
+                                                        <br />
+                                                    </div>
+                                                ))}
                                             </div>
                                         </div>
                                     </div>

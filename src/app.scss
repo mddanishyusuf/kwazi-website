@@ -712,13 +712,18 @@ p {
   top: 60px;
   z-index: 9;
   left: 0;
-  bottom: 0;
+  bottom: 5;
   right: 0;
 
   background-color: #fff;
 
+  .back-btn {}
+
   .details-inner {
-    padding: 120px;
+    // padding: 120px;
+    overflow-y: scroll;
+    height: calc(100vh - 160px);
+    padding: 0px 40px;
 
     .details-header {
       display: grid;
@@ -727,8 +732,122 @@ p {
       img {
         width: 100%;
       }
+
+      .content {
+        h3 {
+          text-align: left;
+          display: inline-block;
+          align-self: center;
+        }
+      }
+
+
     }
   }
+}
+
+.project-banner {
+  width: 70%;
+  margin: 0px auto;
+  padding: 40px 0px;
+
+  img {
+    width: 100%
+  }
+}
+
+.gallery {
+  .item {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 1;
+
+    .project-image-bg {
+      height: 300px;
+      width: 100%;
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+      width: 100%;
+      object-fit: cover;
+      background-position: center;
+      background-size: cover;
+
+    }
+  }
+
+  .item__overlay {
+    background: #ffc60032;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    position: relative;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    transition: 0.2s;
+    transform: translateY(100%);
+
+    button {
+      background: none;
+      border: 2px solid white;
+      color: white;
+      text-transform: uppercase;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 5px;
+    }
+  }
+
+  .item:hover {
+    .item__overlay {
+      transform: translateY(0);
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  right: 0;
+  bottom: -10px;
+  left: 0;
+  display: none;
+  z-index: 999;
+  max-height: calc(100vh);
+}
+
+.overlay.open {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.overlay-inner {
+  background: white;
+  width: 700px;
+}
+
+.carousal-pagination {
+  text-decoration: none;
+  text-align: center;
+
+  li {
+    width: 15px;
+    height: 15px;
+    border: 2px solid #000;
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+  }
+
+  li.active {
+    background-color: #000;
+  }
+
+}
+
+.overlay img {
+  width: 100%;
 }
 
 #linkAudio {
