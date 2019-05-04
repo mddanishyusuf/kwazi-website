@@ -232,8 +232,17 @@ body {
         line-height: 1.5rem;
       }
 
-      span {
+      div {
         cursor: pointer;
+        display: inline-block;
+
+        span {
+
+          &:hover {
+            -webkit-animation: mover 1s;
+            animation: mover 1s;
+          }
+        }
 
         &:nth-of-type(1) {
           padding-right: 5px;
@@ -249,7 +258,11 @@ body {
 
         &:nth-of-type(4) {
           padding: 0px 10px;
-          margin-top: -30px;
+
+          span {
+            margin-top: -30px;
+
+          }
         }
 
         &:nth-of-type(5) {
@@ -304,6 +317,26 @@ body {
 
       }
     }
+  }
+}
+
+@-webkit-keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-10px);
   }
 }
 
@@ -825,6 +858,12 @@ p {
 .overlay-inner {
   background: white;
   width: 700px;
+
+  .close {
+    background: none;
+    color: black;
+    border: 0;
+  }
 }
 
 .carousal-pagination {
