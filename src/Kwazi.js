@@ -87,6 +87,9 @@ function Kwazi() {
                         </h2>
                         <div className="tag-line">branding & design humans</div>
                     </div>
+                    <div className="contact-us-home" name="ContactUs" onClick={clickOnLetter} role="presentation">
+                        Contact Us
+                    </div>
                 </div>
             </div>
             {whichLayer === 'WhoWeAre' ? (

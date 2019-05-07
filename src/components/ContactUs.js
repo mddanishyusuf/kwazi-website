@@ -63,7 +63,6 @@ function ContactUs({ work, hideEvent }) {
                                                 type="text"
                                                 name="name"
                                                 onChange={handleChange}
-                                                onBlur={handleBlur}
                                                 value={values.name}
                                             />
                                             <br />
@@ -76,7 +75,6 @@ function ContactUs({ work, hideEvent }) {
                                                 type="email"
                                                 name="email"
                                                 onChange={handleChange}
-                                                onBlur={handleBlur}
                                                 value={values.email}
                                             />
                                             <br />
@@ -89,7 +87,6 @@ function ContactUs({ work, hideEvent }) {
                                                 type="text"
                                                 name="phone"
                                                 onChange={handleChange}
-                                                onBlur={handleBlur}
                                                 value={values.phone}
                                             />
                                             <br />
@@ -102,7 +99,6 @@ function ContactUs({ work, hideEvent }) {
                                                 type="text"
                                                 name="service"
                                                 onChange={handleChange}
-                                                onBlur={handleBlur}
                                                 value={values.password}
                                             />
                                             <br />

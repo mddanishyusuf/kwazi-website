@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ReactPlayer from 'react-player';
 
 function ImBored({ iMBored, hideEvent }) {
+    const [activeProject, setActiveProject] = useState(null);
+
     function hideBox() {
         hideEvent();
+    }
+
+    const showProject = (details, e) => {
+        e.preventDefault();
+        setActiveProject(details);
+    };
+
+    function hideProjectBox() {
+        setActiveProject(null);
     }
     return (
         <div>
@@ -23,7 +35,7 @@ function ImBored({ iMBored, hideEvent }) {
                             <div className="i-am-bored-section">
                                 {iMBored.list.map((item, key) => (
                                     <div className="bored-card" key={key}>
-                                        <div className="thumbnail">
+                                        <div className="thumbnail" onClick={showProject.bind(this, item)}>
                                             <img src={require(`../static/images/${item.slug}.png`)} alt={item.name} />
                                         </div>
                                         <div className="title">{item.title}</div>
@@ -31,6 +43,25 @@ function ImBored({ iMBored, hideEvent }) {
                                 ))}
                             </div>
                         </div>
+                        {activeProject !== null && (
+                            <div className="project-info-container">
+                                <div className="project-details">
+                                    <div className="details-inner">
+                                        <div className="back-btn" onClick={hideProjectBox} role="presentation">
+                                            <img src={require(`../static/images/back-icon.png`)} alt="back" />
+                                            <span>Back</span>
+                                        </div>
+                                        <div className="links-preview">
+                                            <div className="embeded">
+                                                <ReactPlayer url={activeProject.embededUrl} />
+                                            </div>
+                                            <h4>{activeProject.title}</h4>
+                                            <p>{activeProject.details}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
             )}

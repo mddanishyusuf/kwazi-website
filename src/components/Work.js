@@ -24,8 +24,11 @@ function Work({ work, hideEvent }) {
         setViewImage(imgObj);
     };
 
-    function closePopupImage() {
-        setViewImage(null);
+    function closePopupImage(e) {
+        const elId = e.target.id;
+        if (elId === 'imageOuter' || elId === 'closeBtn') {
+            setViewImage(null);
+        }
     }
 
     return (
@@ -73,9 +76,9 @@ function Work({ work, hideEvent }) {
                                 ))}
                             </div>
                             {viewImage !== null && (
-                                <div className="overlay open">
+                                <div className="overlay open" onClick={closePopupImage} id="imageOuter">
                                     <div className="overlay-inner">
-                                        <button className="close" onClick={closePopupImage}>
+                                        <button className="close" id="closeBtn" onClick={closePopupImage}>
                                             × Close
                                         </button>
                                         <img
@@ -100,7 +103,8 @@ function Work({ work, hideEvent }) {
                                     <div className="project-details">
                                         <div className="details-inner">
                                             <div className="back-btn" onClick={hideProjectBox} role="presentation">
-                                                Back
+                                                <img src={require(`../static/images/back-icon.png`)} alt="back" />
+                                                <span>Back</span>
                                             </div>
                                             <div className="details-header">
                                                 <img
