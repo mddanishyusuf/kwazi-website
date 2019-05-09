@@ -1,12 +1,16 @@
 import React from 'react';
 
-function AboutKwazi({ aboutUs, hideEvent }) {
+function AboutKwazi({ aboutUs, hideEvent, clickFromChild }) {
     function hideBox() {
         hideEvent();
     }
 
     function playMusic() {
         document.getElementById('linkAudio').play();
+    }
+
+    function viewWork(e) {
+        clickFromChild(e);
     }
 
     return (
@@ -74,6 +78,9 @@ function AboutKwazi({ aboutUs, hideEvent }) {
                                         </div>
                                     </div>
                                 ))}
+                            </div>
+                            <div className="sync-link" name="Work" onClick={viewWork} role="presentation">
+                                View Our Work
                             </div>
                         </div>
                     </div>

@@ -31,7 +31,6 @@ function ImBored({ iMBored, hideEvent }) {
                     </div>
                     <div className="page-content">
                         <div className="page-section i-am-bored-container">
-                            <h3>{iMBored.title}</h3>
                             <div className="i-am-bored-section">
                                 {iMBored.list.map((item, key) => (
                                     <div className="bored-card" key={key}>
@@ -57,6 +56,14 @@ function ImBored({ iMBored, hideEvent }) {
                                             </div>
                                             <h4>{activeProject.title}</h4>
                                             <p>{activeProject.details}</p>
+                                        </div>
+                                        <div
+                                            className="sync-link"
+                                            name="Work"
+                                            onClick={hideProjectBox}
+                                            role="presentation"
+                                        >
+                                            More Interesting Stuff Here
                                         </div>
                                     </div>
                                 </div>

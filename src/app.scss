@@ -104,7 +104,8 @@ body {
           font-family: 'gothicm';
         }
 
-        input {
+        input,
+        select {
           text-align: center;
           // display: block;
           width: 400px;
@@ -247,6 +248,8 @@ body {
         display: inline-block;
 
         span {
+          -webkit-animation: mover2 1s forwards;
+          animation: mover2 1s forwards;
 
           &:hover {
             -webkit-animation: mover 1s forwards;
@@ -327,6 +330,39 @@ body {
 
       }
     }
+  }
+}
+
+.sync-link {
+  text-align: center;
+  margin: 20px;
+  font-family: 'GOTHICB';
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.blog-link a {
+  color: #000;
+  text-decoration: none;
+}
+
+@-webkit-keyframes mover2 {
+  0% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes mover2 {
+  0% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }
 

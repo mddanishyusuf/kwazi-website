@@ -12,7 +12,7 @@ function ContactUs({ work, hideEvent }) {
                     <div className="contact-us-page-head">
                         <div className="contact-title" />
                         <div className="close-layer" onClick={hideBox} role="presentation">
-                            X
+                            <img src={require(`../static/images/close-icon.png`)} alt="close page" />
                         </div>
                     </div>
                     <div className="contact-us-content">
@@ -95,12 +95,31 @@ function ContactUs({ work, hideEvent }) {
                                         <div className="input-field">
                                             <label id="name">Service</label>
                                             <br />
-                                            <input
-                                                type="text"
+                                            <select
+                                                id="service"
                                                 name="service"
                                                 onChange={handleChange}
-                                                value={values.password}
-                                            />
+                                                value={values.service}
+                                            >
+                                                <option value="" />
+                                                <option value="Branding & Design">Branding & Design</option>
+                                                <option value="UI/UX Design">UI/UX Design</option>
+                                                <option value="Digital Branding & Strategy">
+                                                    Digital Branding & Strategy
+                                                </option>
+                                                <option value="Product Design & Packaging">
+                                                    Product Design & Packaging
+                                                </option>
+                                                <option value="Internal Branding & Design Thinking">
+                                                    Internal Branding & Design Thinking
+                                                </option>
+                                                <option value="Art Direction & Conceptualisation">
+                                                    Art Direction & Conceptualisation
+                                                </option>
+                                                <option value="Marketing Campaign Design">
+                                                    Marketing Campaign Design
+                                                </option>
+                                            </select>
                                             <br />
                                             <span>{errors.service && touched.service && errors.service}</span>
                                         </div>
@@ -113,13 +132,25 @@ function ContactUs({ work, hideEvent }) {
                             <h3>Follow Us</h3>
 
                             <div className="social-icons">
-                                <a href="https://linkedin.com" target="_blank" rel="noreferrer noopener">
+                                <a
+                                    href="https://www.linkedin.com/company/kwaziverse/about/"
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                >
                                     <img src={require(`../static/images/LinkedIn Icon@2x.png`)} alt="LinkedIn" />
                                 </a>
-                                <a href="https://linkedin.com" target="_blank" rel="noreferrer noopener">
+                                <a
+                                    href="https://www.instagram.com/kwaziverse/"
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                >
                                     <img src={require(`../static/images/Instagram Icon@2x.png`)} alt="Instagram" />
                                 </a>
-                                <a href="https://linkedin.com" target="_blank" rel="noreferrer noopener">
+                                <a
+                                    href="https://open.spotify.com/playlist/5wVeBy1xknXDEbFXtFe0YB"
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                >
                                     <img src={require(`../static/images/Spotify_Icon@2x.png`)} alt="Spotify" />
                                 </a>
                             </div>

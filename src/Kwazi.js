@@ -68,9 +68,16 @@ function Kwazi() {
                                         A
                                     </span>
                                 </div>
-                                <div>
-                                    <span name="Blog" onClick={clickOnLetter} role="presentation">
-                                        :
+                                <div className="blog-link">
+                                    <span>
+                                        <a
+                                            href="https://medium.com/@kwaziverse"
+                                            target="_blank"
+                                            rel="noreferrer noopener"
+                                        >
+                                            {' '}
+                                            :{' '}
+                                        </a>
                                     </span>
                                 </div>
                                 <div>
@@ -95,7 +102,7 @@ function Kwazi() {
             {whichLayer === 'WhoWeAre' ? (
                 <div className="who-we-are section four" id="modal-container">
                     <div className="section-inner modal-background">
-                        <WhoWeAre {...data} hideEvent={hideLayer} />
+                        <WhoWeAre {...data} hideEvent={hideLayer} clickFromChild={clickOnLetter} />
                         <div className="contact-us" name="ContactUs" onClick={clickOnLetter} role="presentation">
                             Contact Us
                         </div>
@@ -119,7 +126,7 @@ function Kwazi() {
             {whichLayer === 'AboutKwazi' ? (
                 <div className="about-kwazi section four" id="modal-container">
                     <div className="section-inner modal-background">
-                        <AboutKwazi {...data} hideEvent={hideLayer} />
+                        <AboutKwazi {...data} hideEvent={hideLayer} clickFromChild={clickOnLetter} />
                         <div className="contact-us" name="ContactUs" onClick={clickOnLetter} role="presentation">
                             Contact Us
                         </div>

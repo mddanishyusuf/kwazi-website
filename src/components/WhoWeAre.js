@@ -1,9 +1,13 @@
 import React from 'react';
 import HeaderImage from '../static/images/who-we-are-header.png';
 
-function WhoWeAre({ whoWeAre, hideEvent }) {
+function WhoWeAre({ whoWeAre, hideEvent, clickFromChild }) {
     function hideBox() {
         hideEvent();
+    }
+
+    function viewWork(e) {
+        clickFromChild(e);
     }
 
     return (
@@ -71,6 +75,9 @@ function WhoWeAre({ whoWeAre, hideEvent }) {
                                         <div className="service-card-title">{item.name}</div>
                                     </div>
                                 ))}
+                            </div>
+                            <div className="sync-link" name="Work" onClick={viewWork} role="presentation">
+                                View Our Work
                             </div>
                         </div>
                     </div>
