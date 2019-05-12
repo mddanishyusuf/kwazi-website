@@ -238,9 +238,10 @@ body {
       height: 6rem;
       overflow: hidden;
 
-      @media screen and (max-width: 800px) {
+      @media screen and (max-width: 1000px) {
         font-size: 3rem !important;
-        line-height: 1.5rem;
+        line-height: 0.9;
+        height: 2rem;
       }
 
       div {
@@ -275,6 +276,9 @@ body {
           span {
             margin-top: -30px;
 
+            @media screen and (max-width: 1000px) {
+              margin-top: -10px;
+            }
           }
         }
 
@@ -288,7 +292,6 @@ body {
 
         @media screen and (min-width: 800px) {
           &:nth-of-type(1) {
-            padding-right: 30px;
             margin-bottom: -20px !important;
           }
 
@@ -718,6 +721,7 @@ h3 {
 
   .bored-card {
     text-align: center;
+    cursor: pointer;
 
     .title {
       font-family: 'GOTHICB';
@@ -817,6 +821,10 @@ p {
       display: grid;
       grid-template-columns: 30% 70%;
 
+      @media screen and (max-width: 800px) {
+        grid-template-columns: 100%;
+      }
+
       img {
         width: 100%;
       }
@@ -838,6 +846,10 @@ p {
   width: 70%;
   margin: 0px auto;
   padding: 40px 0px;
+
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
 
   img {
     width: 100%
@@ -874,6 +886,7 @@ p {
     align-items: center;
     transition: 0.2s;
     transform: translateY(100%);
+    cursor: pointer;
 
     button {
       background: none;
@@ -911,13 +924,16 @@ p {
 }
 
 .overlay-inner {
-  background: white;
-  width: 700px;
+  background: #000;
+  max-width: 700px;
+  position: absolute;
 
   .close {
     background: none;
-    color: black;
+    color: #fff;
     border: 0;
+    padding: 10px;
+    cursor: pointer;
   }
 }
 
@@ -928,20 +944,21 @@ p {
   li {
     width: 15px;
     height: 15px;
-    border: 2px solid #000;
+    border: 2px solid #fff;
     display: inline-block;
     margin: 10px;
     cursor: pointer;
   }
 
   li.active {
-    background-color: #000;
+    background-color: #fff;
   }
 
 }
 
 .overlay img {
   width: 100%;
+  max-height: calc(100vh - 200px);
 }
 
 #linkAudio {
@@ -1017,6 +1034,8 @@ p {
   margin-bottom: 20px;
   cursor: pointer;
   width: 70px;
+  right: 0;
+  margin-right: 21px;
 }
 
 .links-preview {

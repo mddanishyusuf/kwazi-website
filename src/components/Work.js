@@ -141,9 +141,7 @@ function Work({ work, hideEvent }) {
                                                                     }`)})`,
                                                                 }}
                                                             />
-                                                            <div className="item__overlay">
-                                                                <button>View →</button>
-                                                            </div>
+                                                            <div className="item__overlay" />
                                                         </div>
                                                         <br />
                                                     </div>

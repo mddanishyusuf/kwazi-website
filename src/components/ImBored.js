@@ -52,7 +52,7 @@ function ImBored({ iMBored, hideEvent }) {
                                         </div>
                                         <div className="links-preview">
                                             <div className="embeded">
-                                                <ReactPlayer url={activeProject.embededUrl} />
+                                                <ReactPlayer url={activeProject.embededUrl} width="100%" />
                                             </div>
                                             <h4>{activeProject.title}</h4>
                                             <p>{activeProject.details}</p>
