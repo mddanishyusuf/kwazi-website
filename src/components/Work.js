@@ -104,7 +104,7 @@ function Work({ work, hideEvent }) {
                                         <div className="details-inner">
                                             <div className="back-btn" onClick={hideProjectBox} role="presentation">
                                                 <img src={require(`../static/images/back-icon.png`)} alt="back" />
-                                                <span>Back</span>
+                                                {/* <span>Back</span> */}
                                             </div>
                                             <div className="details-header">
                                                 <img

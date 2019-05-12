@@ -147,7 +147,7 @@ function ContactUs({ work, hideEvent }) {
                                     <img src={require(`../static/images/Instagram Icon@2x.png`)} alt="Instagram" />
                                 </a>
                                 <a
-                                    href="https://open.spotify.com/playlist/5wVeBy1xknXDEbFXtFe0YB"
+                                    href="https://open.spotify.com/user/70ga03vfoo04uf3p63w2sdo6y"
                                     target="_blank"
                                     rel="noreferrer noopener"
                                 >
