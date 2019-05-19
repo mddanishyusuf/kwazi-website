@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import GooglePhoto from 'react-google-photo';
 
 function Work({ work, hideEvent }) {
     function hideBox() {
@@ -8,6 +9,8 @@ function Work({ work, hideEvent }) {
     const [activeProject, setActiveProject] = useState(null);
     const [viewImage, setViewImage] = useState(null);
     const [activeImageIndex, setActiveImageIndex] = useState(null);
+    const [openGallery, setOpenGallery] = useState(false);
+    const [photoIndex, setPhotoIndex] = useState(0);
 
     const showProject = (details, e) => {
         e.preventDefault();
@@ -30,6 +33,22 @@ function Work({ work, hideEvent }) {
             setViewImage(null);
         }
     }
+
+    const handleClickPrev = () => {
+        setPhotoIndex(photoIndex - 1);
+    };
+
+    const handleClickNext = () => {
+        setPhotoIndex(photoIndex + 1);
+    };
+
+    const handleOpen = () => {
+        setOpenGallery(true);
+    };
+
+    const handleClose = () => {
+        setOpenGallery(false);
+    };
 
     return (
         <div>
@@ -81,10 +100,7 @@ function Work({ work, hideEvent }) {
                                         <button className="close" id="closeBtn" onClick={closePopupImage}>
                                             × Close
                                         </button>
-                                        <img
-                                            src={require(`../static/images/projects/${viewImage.image}`)}
-                                            alt={viewImage.name}
-                                        />
+                                        <img src={viewImage.src} alt={viewImage.name} />
                                         <ul className="carousal-pagination">
                                             {activeProject.images.map((obj, key) => (
                                                 <li
@@ -126,6 +142,14 @@ function Work({ work, hideEvent }) {
                                                 />
                                             </div>
                                             <div className="gallery">
+                                                {/* <GooglePhoto
+                                                    open={openGallery}
+                                                    src={activeProject.images}
+                                                    srcIndex={photoIndex}
+                                                    onClickPrev={handleClickPrev}
+                                                    onClickNext={handleClickNext}
+                                                    onClose={handleClose}
+                                                /> */}
                                                 {activeProject.images.map((obj, key) => (
                                                     <div key={key}>
                                                         <div
@@ -136,9 +160,7 @@ function Work({ work, hideEvent }) {
                                                             <div
                                                                 className="project-image-bg"
                                                                 style={{
-                                                                    backgroundImage: `url(${require(`../static/images/projects/${
-                                                                        obj.image
-                                                                    }`)})`,
+                                                                    backgroundImage: `url(${obj.src})`,
                                                                 }}
                                                             />
                                                             <div className="item__overlay" />

@@ -15,12 +15,14 @@ function Kwazi() {
     const [data, setData] = useState({});
     const [whichLayer, setWhichLayer] = useState(null);
 
+    const [hideBox, setHideBox] = useState(true);
+
     useEffect(() => {
         async function fetchMyAPI() {
             const url = 'http://something';
             const config = {};
             const response = await axios.get(
-                'https://raw.githubusercontent.com/mddanishyusuf/profile-with-github/master/kwazi.json'
+                'https://raw.githubusercontent.com/shubhendumitra123/kwazi-data/master/kwazi.json'
             );
             setData(response.data);
             console.log(response);
@@ -38,12 +40,16 @@ function Kwazi() {
 
     function clickOnLetter(e) {
         e.preventDefault();
+        setHideBox(true);
         console.log(e.target.getAttribute('name'));
         setWhichLayer(e.target.getAttribute('name'));
     }
 
     function hideLayer() {
-        setWhichLayer(null);
+        setHideBox(false);
+        setTimeout(() => {
+            setWhichLayer(null);
+        }, 300);
     }
 
     return (
@@ -100,7 +106,10 @@ function Kwazi() {
                 </div>
             </div>
             {whichLayer === 'WhoWeAre' ? (
-                <div className="who-we-are section four" id="modal-container">
+                <div
+                    id="modal-container"
+                    className={!hideBox ? 'who-we-are section four out' : 'who-we-are section four modal-active'}
+                >
                     <div className="section-inner modal-background">
                         <WhoWeAre {...data} hideEvent={hideLayer} clickFromChild={clickOnLetter} />
                         <div className="contact-us" name="ContactUs" onClick={clickOnLetter} role="presentation">
@@ -112,7 +121,10 @@ function Kwazi() {
                 ''
             )}
             {whichLayer === 'Work' ? (
-                <div className="kwazi-work section four" id="modal-container">
+                <div
+                    className={!hideBox ? 'kwazi-work section four out' : 'kwazi-work section four modal-active'}
+                    id="modal-container"
+                >
                     <div className="section-inner modal-background">
                         <Work {...data} hideEvent={hideLayer} />
                         <div className="contact-us" name="ContactUs" onClick={clickOnLetter} role="presentation">
@@ -124,7 +136,10 @@ function Kwazi() {
                 ''
             )}
             {whichLayer === 'AboutKwazi' ? (
-                <div className="about-kwazi section four" id="modal-container">
+                <div
+                    className={!hideBox ? 'about-kwazi section four out' : 'about-kwazi section four modal-active'}
+                    id="modal-container"
+                >
                     <div className="section-inner modal-background">
                         <AboutKwazi {...data} hideEvent={hideLayer} clickFromChild={clickOnLetter} />
                         <div className="contact-us" name="ContactUs" onClick={clickOnLetter} role="presentation">
@@ -136,7 +151,10 @@ function Kwazi() {
                 ''
             )}
             {whichLayer === 'Zenith' ? (
-                <div className="zenith section four" id="modal-container">
+                <div
+                    className={!hideBox ? 'zenith section four out' : 'zenith section four modal-active'}
+                    id="modal-container"
+                >
                     <div className="section-inner modal-background">
                         <Zenith {...data} hideEvent={hideLayer} />
                         <div className="contact-us" name="ContactUs" onClick={clickOnLetter} role="presentation">
@@ -148,7 +166,10 @@ function Kwazi() {
                 ''
             )}
             {whichLayer === 'ImBored' ? (
-                <div className="i-am-board section four" id="modal-container">
+                <div
+                    className={!hideBox ? 'i-am-board section four out' : 'i-am-board section four modal-active'}
+                    id="modal-container"
+                >
                     <div className="section-inner modal-background">
                         <ImBored {...data} hideEvent={hideLayer} />
                         <div className="contact-us" name="ContactUs" onClick={clickOnLetter} role="presentation">

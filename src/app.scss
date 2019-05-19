@@ -767,7 +767,7 @@ p {
 
 #cf {
   position: relative;
-  height: 340px;
+  height: 260px;
   margin: 0 auto;
 }
 
@@ -814,7 +814,7 @@ p {
   .details-inner {
     // padding: 120px;
     overflow-y: scroll;
-    height: calc(100vh - 160px);
+    height: calc(100vh - 167px);
     padding: 0px 40px;
 
     .details-header {
@@ -968,7 +968,7 @@ p {
 
 .services-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   grid-gap: 60px;
   max-width: 1200px;
   margin: 0px auto;
@@ -1050,4 +1050,67 @@ p {
     left: 0;
     margin: auto;
   }
+}
+
+/* clear the body margin */
+body {
+  margin: 0;
+}
+
+.banner {
+  /* this bit of markup is essential */
+  position: relative;
+  overflow: hidden;
+height: 400px;
+  /* do this shit by yourself */
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 100vh;
+  letter-spacing: 2px;
+}
+
+.banner__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+width: 100%;
+  height: auto;
+  min-height: 100%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: -1;
+}
+
+#cf2 {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+  z-index: 99;
+  cursor: pointer;
+}
+#cf2 img {
+  position:absolute;
+  left:0;
+  width: 100px;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+#cf2 img.transparent {
+opacity:0;
+}
+
+#video-controls {
+  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
