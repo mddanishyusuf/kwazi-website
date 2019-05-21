@@ -51,6 +51,62 @@ function Work({ work, hideEvent }) {
 
     return (
         <div>
+            {viewImage !== null && (
+                <div className="overlay open" onClick={closePopupImage} id="imageOuter">
+                    <div className="overlay-inner">
+                        <button className="close" id="closeBtn" role="presentation" onClick={closePopupImage}>
+                            × Close
+                        </button>
+                        {photoIndex > 0 && (
+                            <div className="left">
+                                {' '}
+                                <span onClick={handleClickPrev}>
+                                    <svg
+                                        width="36px"
+                                        height="36px"
+                                        className="v1262d JUQOtc yz5P3b"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z" />
+                                    </svg>
+                                </span>{' '}
+                            </div>
+                        )}
+                        <div
+                            className="gallery-image"
+                            style={{ backgroundImage: `url(${activeProject.images[photoIndex].image})` }}
+                        />
+
+                        {photoIndex + 1 < activeProject.images.length && (
+                            <div className="right">
+                                {' '}
+                                <span onClick={handleClickNext}>
+                                    <svg
+                                        width="36px"
+                                        height="36px"
+                                        className="v1262d JUQOtc yz5P3b"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z" />
+                                    </svg>
+                                </span>{' '}
+                            </div>
+                        )}
+
+                        {/* <img src={viewImage.image} alt={viewImage.name} /> */}
+                        <ul className="carousal-pagination">
+                            {activeProject.images.map((obj, key) => (
+                                <li
+                                    onClick={viewThisImage.bind(this, obj, key)}
+                                    role="presentation"
+                                    key={key}
+                                    className={activeImageIndex === key && 'active'}
+                                />
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            )}
             {work !== undefined && (
                 <div className="container modal">
                     <div className="page-title-head">
@@ -85,31 +141,6 @@ function Work({ work, hideEvent }) {
                                     </div>
                                 ))}
                             </div>
-                            {viewImage !== null && (
-                                <div className="overlay open" onClick={closePopupImage} id="imageOuter">
-                                    <div className="overlay-inner">
-                                        <button
-                                            className="close"
-                                            id="closeBtn"
-                                            role="presentation"
-                                            onClick={closePopupImage}
-                                        >
-                                            × Close
-                                        </button>
-                                        <img src={viewImage.src} alt={viewImage.name} />
-                                        <ul className="carousal-pagination">
-                                            {activeProject.images.map((obj, key) => (
-                                                <li
-                                                    onClick={viewThisImage.bind(this, obj, key)}
-                                                    role="presentation"
-                                                    key={key}
-                                                    className={activeImageIndex === key && 'active'}
-                                                />
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-                            )}
                             {activeProject !== null && (
                                 <div className="project-info-container">
                                     <div className="project-details">

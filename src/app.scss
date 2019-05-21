@@ -925,7 +925,8 @@ p {
 
 .overlay-inner {
   background: #000;
-  max-width: 700px;
+  width: 80%;
+  height: 100vh;
   position: absolute;
 
   .close {
@@ -934,6 +935,53 @@ p {
     border: 0;
     padding: 10px;
     cursor: pointer;
+    position: fixed;
+    left: 0;
+  }
+  .left {
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    span {
+      align-self: center;
+      cursor: pointer;
+      background: rgba(66,66,66,0.54);
+    -webkit-border-radius: 28px;
+    border-radius: 28px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    margin-top: -28px;
+    height: 56px;
+    width: 56px;
+    svg {
+      padding: 10px;
+    }
+    }
+
+  }
+  .right {
+    position: fixed;
+    right: 0;
+    top:0;
+    align-self: center;
+    height: 100vh;
+    display: flex;
+    span {
+      align-self: center;
+      cursor: pointer;
+      background: rgba(66,66,66,0.54);
+      -webkit-border-radius: 28px;
+      border-radius: 28px;
+      top: 50%;
+      margin-top: -28px;
+      height: 56px;
+      width: 56px;
+    svg {
+      padding: 10px;
+    }
+    }
   }
 }
 
@@ -956,9 +1004,11 @@ p {
 
 }
 
-.overlay img {
+.overlay .gallery-image {
   width: 100%;
-  max-height: calc(100vh - 200px);
+  height: 100vh;
+  background-size: contain;
+  background-position: center;
 }
 
 #linkAudio {
