@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import GooglePhoto from 'react-google-photo';
 
 function Work({ work, hideEvent }) {
     function hideBox() {
@@ -78,16 +77,8 @@ function Work({ work, hideEvent }) {
                                         role="presentation"
                                     >
                                         <div className="thumbnail" id="cf">
-                                            <img
-                                                className="bottom"
-                                                src={require(`../static/images/projects/${item.imageOnHover}`)}
-                                                alt={item.name}
-                                            />
-                                            <img
-                                                className="top"
-                                                src={require(`../static/images/projects/${item.image}`)}
-                                                alt={item.name}
-                                            />
+                                            <img className="bottom" src={item.imageOnHover} alt={item.name} />
+                                            <img className="top" src={item.image} alt={item.name} />
                                         </div>
                                         <div className="title">{item.name}</div>
                                         <div className="type">{item.type}</div>
@@ -97,7 +88,12 @@ function Work({ work, hideEvent }) {
                             {viewImage !== null && (
                                 <div className="overlay open" onClick={closePopupImage} id="imageOuter">
                                     <div className="overlay-inner">
-                                        <button className="close" id="closeBtn" onClick={closePopupImage}>
+                                        <button
+                                            className="close"
+                                            id="closeBtn"
+                                            role="presentation"
+                                            onClick={closePopupImage}
+                                        >
                                             × Close
                                         </button>
                                         <img src={viewImage.src} alt={viewImage.name} />
@@ -123,10 +119,7 @@ function Work({ work, hideEvent }) {
                                                 {/* <span>Back</span> */}
                                             </div>
                                             <div className="details-header">
-                                                <img
-                                                    src={require(`../static/images/projects/${activeProject.image}`)}
-                                                    alt={activeProject.name}
-                                                />
+                                                <img src={activeProject.image} alt={activeProject.name} />
                                                 <div className="content">
                                                     <h3>{activeProject.name}</h3>
                                                     <small>
@@ -142,14 +135,6 @@ function Work({ work, hideEvent }) {
                                                 />
                                             </div>
                                             <div className="gallery">
-                                                {/* <GooglePhoto
-                                                    open={openGallery}
-                                                    src={activeProject.images}
-                                                    srcIndex={photoIndex}
-                                                    onClickPrev={handleClickPrev}
-                                                    onClickNext={handleClickNext}
-                                                    onClose={handleClose}
-                                                /> */}
                                                 {activeProject.images.map((obj, key) => (
                                                     <div key={key}>
                                                         <div
@@ -160,7 +145,7 @@ function Work({ work, hideEvent }) {
                                                             <div
                                                                 className="project-image-bg"
                                                                 style={{
-                                                                    backgroundImage: `url(${obj.src})`,
+                                                                    backgroundImage: `url(${obj.image})`,
                                                                 }}
                                                             />
                                                             <div className="item__overlay" />

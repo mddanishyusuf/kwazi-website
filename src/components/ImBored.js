@@ -34,8 +34,12 @@ function ImBored({ iMBored, hideEvent }) {
                             <div className="i-am-bored-section">
                                 {iMBored.list.map((item, key) => (
                                     <div className="bored-card" key={key}>
-                                        <div className="thumbnail" onClick={showProject.bind(this, item)}>
-                                            <img src={require(`../static/images/${item.slug}.png`)} alt={item.name} />
+                                        <div
+                                            className="thumbnail"
+                                            onClick={showProject.bind(this, item)}
+                                            role="presentation"
+                                        >
+                                            <img src={item.image} alt={item.name} />
                                         </div>
                                         <div className="title">{item.title}</div>
                                     </div>

@@ -92,10 +92,7 @@ function WhoWeAre({ whoWeAre, hideEvent, clickFromChild }) {
                                         <div className="header">
                                             <div className="title">{item.name}</div>
                                             <div className="icon">
-                                                <img
-                                                    src={require(`../static/images/${item.name}.png`)}
-                                                    alt={item.name}
-                                                />
+                                                <img src={item.image} alt={item.name} />
                                             </div>
                                         </div>
                                         <div className="content">
@@ -113,7 +110,7 @@ function WhoWeAre({ whoWeAre, hideEvent, clickFromChild }) {
                                 {whoWeAre.services.slice(0, 4).map((item, key) => (
                                     <div className="services-card" key={key}>
                                         <div className="icon">
-                                            <img src={require(`../static/images/${item.slug}.png`)} alt={item.slug} />
+                                            <img src={item.image} alt={item.slug} />
                                         </div>
                                         <div className="service-card-title">{item.name}</div>
                                     </div>
@@ -125,7 +122,7 @@ function WhoWeAre({ whoWeAre, hideEvent, clickFromChild }) {
                                 {whoWeAre.services.slice(4, 7).map((item, key) => (
                                     <div className="services-card" key={key}>
                                         <div className="icon">
-                                            <img src={require(`../static/images/${item.slug}.png`)} alt={item.slug} />
+                                            <img src={item.image} alt={item.slug} />
                                         </div>
                                         <div className="service-card-title">{item.name}</div>
                                     </div>

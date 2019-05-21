@@ -21,7 +21,7 @@ function Zenith({ zenith, hideEvent }) {
                         <h3 className="zenith-title">{zenith.title}</h3>
                         <div className="zenith-section">
                             <p>{zenith.description}</p>
-                            <img src={require(`../static/images/${zenith.slug}.png`)} />
+                            <img src={zenith.image} alt="zenith" />
                         </div>
                     </div>
                 </div>

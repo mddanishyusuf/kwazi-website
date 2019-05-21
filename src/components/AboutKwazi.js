@@ -58,7 +58,7 @@ function AboutKwazi({ aboutUs, hideEvent, clickFromChild }) {
                                 {aboutUs.workWithUs.values.map((item, key) => (
                                     <div className="value-card" key={key}>
                                         <div className="thumbnail">
-                                            <img src={require(`../static/images/${item.slug}.png`)} alt={item.name} />
+                                            <img src={item.image} alt={item.name} />
                                         </div>
                                         <div className="title">{item.title}</div>
                                     </div>
@@ -69,7 +69,7 @@ function AboutKwazi({ aboutUs, hideEvent, clickFromChild }) {
                                 {aboutUs.team.map((item, key) => (
                                     <div className={key === 1 ? 'team-card second-team-card' : 'team-card'} key={key}>
                                         <div className="thumbnail">
-                                            <img src={require(`../static/images/${item.slug}.png`)} alt={item.name} />
+                                            <img src={item.image} alt={item.name} />
                                         </div>
                                         <div className="content">
                                             <div className="name">{item.name}</div>
