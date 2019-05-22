@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Work({ work, hideEvent }) {
     function hideBox() {
@@ -11,6 +11,24 @@ function Work({ work, hideEvent }) {
     const [openGallery, setOpenGallery] = useState(false);
     const [photoIndex, setPhotoIndex] = useState(0);
 
+    useEffect(() => {
+        const handler = function(event) {
+            console.log(event.key);
+            if (event.key === 'ArrowRight') {
+                if (activeProject !== null && photoIndex + 1 < activeProject.images.length) {
+                    setPhotoIndex(photoIndex + 1);
+                }
+            }
+            if (event.key === 'ArrowLeft' && photoIndex > 0) {
+                setPhotoIndex(photoIndex - 1);
+            }
+        };
+        window.addEventListener('keydown', handler);
+        return () => {
+            window.removeEventListener('keydown', handler);
+        };
+    }, [activeProject, photoIndex]);
+
     const showProject = (details, e) => {
         e.preventDefault();
         setActiveProject(details);
@@ -22,6 +40,7 @@ function Work({ work, hideEvent }) {
 
     const viewThisImage = (imgObj, key, e) => {
         setActiveImageIndex(key);
+        setPhotoIndex(key);
         e.preventDefault();
         setViewImage(imgObj);
     };
@@ -32,6 +51,16 @@ function Work({ work, hideEvent }) {
             setViewImage(null);
         }
     }
+
+    const handleKeyDown = e => {
+        console.log(38);
+        // arrow up/down button should select next/previous list element
+        if (e.keyCode === 38) {
+            console.log(38);
+        } else if (e.keyCode === 40) {
+            console.log(40);
+        }
+    };
 
     const handleClickPrev = () => {
         setPhotoIndex(photoIndex - 1);
@@ -52,7 +81,12 @@ function Work({ work, hideEvent }) {
     return (
         <div>
             {viewImage !== null && (
-                <div className="overlay open" onClick={closePopupImage} id="imageOuter">
+                <div
+                    className="overlay open image-viewer-container"
+                    onKeyDown={handleKeyDown}
+                    onClick={closePopupImage}
+                    id="imageOuter"
+                >
                     <div className="overlay-inner">
                         <button className="close" id="closeBtn" role="presentation" onClick={closePopupImage}>
                             × Close
@@ -92,18 +126,6 @@ function Work({ work, hideEvent }) {
                                 </span>{' '}
                             </div>
                         )}
-
-                        {/* <img src={viewImage.image} alt={viewImage.name} /> */}
-                        <ul className="carousal-pagination">
-                            {activeProject.images.map((obj, key) => (
-                                <li
-                                    onClick={viewThisImage.bind(this, obj, key)}
-                                    role="presentation"
-                                    key={key}
-                                    className={activeImageIndex === key && 'active'}
-                                />
-                            ))}
-                        </ul>
                     </div>
                 </div>
             )}
@@ -160,10 +182,7 @@ function Work({ work, hideEvent }) {
                                                 </div>
                                             </div>
                                             <div className="project-banner">
-                                                <img
-                                                    src={require(`../static/images/projects/marzano-banner.jpg`)}
-                                                    alt="Project Banner"
-                                                />
+                                                <img src={activeProject.projectBanner} alt="Project Banner" />
                                             </div>
                                             <div className="gallery">
                                                 {activeProject.images.map((obj, key) => (
