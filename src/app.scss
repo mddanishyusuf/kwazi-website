@@ -722,7 +722,11 @@ h3 {
   .bored-card {
     text-align: center;
     cursor: pointer;
-
+.thumbnail{
+  img {
+    width: 70%;
+  }
+}
     .title {
       font-family: 'GOTHICB';
       font-size: 1rem;
@@ -775,7 +779,7 @@ p {
   }
 
   @media screen and (max-width: 700px) {
-    height: 400px;
+    height: 300px;
   }
 }
 

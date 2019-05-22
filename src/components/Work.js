@@ -78,6 +78,8 @@ function Work({ work, hideEvent }) {
         setOpenGallery(false);
     };
 
+    console.log(activeProject);
+
     return (
         <div>
             {viewImage !== null && (
@@ -172,7 +174,7 @@ function Work({ work, hideEvent }) {
                                                 {/* <span>Back</span> */}
                                             </div>
                                             <div className="details-header">
-                                                <img src={activeProject.image} alt={activeProject.name} />
+                                                <img src={activeProject.imageOnHover} alt={activeProject.name} />
                                                 <div className="content">
                                                     <h3>{activeProject.name}</h3>
                                                     <small>
@@ -181,9 +183,12 @@ function Work({ work, hideEvent }) {
                                                     <p>{activeProject.story}</p>
                                                 </div>
                                             </div>
-                                            <div className="project-banner">
-                                                <img src={activeProject.projectBanner} alt="Project Banner" />
-                                            </div>
+                                            {activeProject.projectBanner !== null && (
+                                                <div className="project-banner">
+                                                    <img src={activeProject.projectBanner} alt="Project Banner" />
+                                                </div>
+                                            )}
+
                                             <div className="gallery">
                                                 {activeProject.images.map((obj, key) => (
                                                     <div key={key}>

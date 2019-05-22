@@ -23,7 +23,7 @@ function ImBored({ iMBored, hideEvent }) {
                     <div className="page-title-head">
                         <div className="right">
                             <span className="cl">I</span>
-                            <span className="sl">'M BORED</span>
+                            <span className="sl">NSPIRATION</span>
                         </div>
                         <div className="close-layer" onClick={hideBox} role="presentation">
                             <img src={require(`../static/images/close-icon.png`)} alt="close page" />
@@ -59,7 +59,8 @@ function ImBored({ iMBored, hideEvent }) {
                                                 <ReactPlayer url={activeProject.embededUrl} width="100%" />
                                             </div>
                                             <h4>{activeProject.title}</h4>
-                                            <p>{activeProject.details}</p>
+
+                                            <p dangerouslySetInnerHTML={{ __html: activeProject.details }} />
                                         </div>
                                         <div
                                             className="sync-link"

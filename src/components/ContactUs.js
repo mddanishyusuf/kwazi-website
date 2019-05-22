@@ -1,5 +1,6 @@
 import React from 'react';
 import { Formik } from 'formik';
+import axios from 'axios';
 
 function ContactUs({ work, hideEvent }) {
     function hideBox() {
@@ -40,7 +41,13 @@ function ContactUs({ work, hideEvent }) {
                                 }}
                                 onSubmit={(values, { setSubmitting }) => {
                                     setTimeout(() => {
-                                        alert(JSON.stringify(values, null, 2));
+                                        axios
+                                            .post('https://hooks.zapier.com/hooks/catch/2664919/v29gsz/', values, {
+                                                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                                            })
+                                            .then(res => {
+                                                console.log('done');
+                                            });
                                         setSubmitting(false);
                                     }, 400);
                                 }}
