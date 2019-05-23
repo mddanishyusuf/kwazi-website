@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function Work({ work, hideEvent }) {
+function Work({ work, hideEvent, clickFromChild }) {
     function hideBox() {
         hideEvent();
     }
@@ -77,6 +77,10 @@ function Work({ work, hideEvent }) {
     const handleClose = () => {
         setOpenGallery(false);
     };
+
+    function viewWork(e) {
+        clickFromChild(e);
+    }
 
     console.log(activeProject);
 
@@ -213,6 +217,9 @@ function Work({ work, hideEvent }) {
                                     </div>
                                 </div>
                             )}
+                            <div className="sync-link" name="WhoWeAre" onClick={viewWork} role="presentation">
+                                View Our Services
+                            </div>
                         </div>
                     </div>
                 </div>

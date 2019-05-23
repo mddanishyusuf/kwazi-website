@@ -74,7 +74,10 @@ function AboutKwazi({ aboutUs, hideEvent, clickFromChild }) {
                                         </div>
                                         <div className="content">
                                             <div className="name">{item.name}</div>
-                                            <div className="position">{item.position}</div>
+                                            <div
+                                                className="position"
+                                                dangerouslySetInnerHTML={{ __html: item.position }}
+                                            />
                                             <div className="about" dangerouslySetInnerHTML={{ __html: item.about }} />
                                         </div>
                                     </div>

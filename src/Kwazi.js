@@ -126,7 +126,7 @@ function Kwazi() {
                     id="modal-container"
                 >
                     <div className="section-inner modal-background">
-                        <Work {...data} hideEvent={hideLayer} />
+                        <Work {...data} hideEvent={hideLayer} clickFromChild={clickOnLetter} />
                         <div className="contact-us" name="ContactUs" onClick={clickOnLetter} role="presentation">
                             Contact Us
                         </div>
