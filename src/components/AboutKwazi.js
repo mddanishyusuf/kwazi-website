@@ -34,7 +34,7 @@ function AboutKwazi({ aboutUs, hideEvent, clickFromChild }) {
                         <div className="about-us-section">
                             <h3>{aboutUs.title}</h3>
                             <div className="about-kwazi-word">
-                                qua·​si | \ ˈkwä-zē{' '}
+                                ˈkwɑːzi/ from Latin quasi ‘as if, almost{' '}
                                 <span onClick={playMusic} role="presentation" className="kwazi-pron">
                                     🔊
                                 </span>
@@ -52,7 +52,8 @@ function AboutKwazi({ aboutUs, hideEvent, clickFromChild }) {
                                     Reflective of the quality to be something you yet aren’t.
                                 </span>
                             </div>
-                            <p>{aboutUs.description}</p>
+
+                            <p dangerouslySetInnerHTML={{ __html: aboutUs.description }} />
                             <h3>{aboutUs.workWithUs.title}</h3>
                             <div className="work-with-us-section">
                                 {aboutUs.workWithUs.values.map((item, key) => (
@@ -74,7 +75,7 @@ function AboutKwazi({ aboutUs, hideEvent, clickFromChild }) {
                                         <div className="content">
                                             <div className="name">{item.name}</div>
                                             <div className="position">{item.position}</div>
-                                            <div className="about">{item.about}</div>
+                                            <div className="about" dangerouslySetInnerHTML={{ __html: item.about }} />
                                         </div>
                                     </div>
                                 ))}

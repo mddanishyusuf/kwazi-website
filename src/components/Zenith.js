@@ -20,7 +20,7 @@ function Zenith({ zenith, hideEvent }) {
                     <div className="page-content">
                         <h3 className="zenith-title">{zenith.title}</h3>
                         <div className="zenith-section">
-                            <p>{zenith.description}</p>
+                            <p className="about" dangerouslySetInnerHTML={{ __html: zenith.description }} />
                             <img src={zenith.image} alt="zenith" />
                         </div>
                     </div>

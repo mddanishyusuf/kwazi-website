@@ -84,7 +84,7 @@ function WhoWeAre({ whoWeAre, hideEvent, clickFromChild }) {
                         </div>
                         <div className="page-section">
                             <h3>{whoWeAre.title}</h3>
-                            <p className="p-container">{whoWeAre.description}</p>
+                            <p className="p-container" dangerouslySetInnerHTML={{ __html: whoWeAre.description }} />
                             <h3>OUR BRANDING & DESIGN PRACTICE</h3>
                             <div className="practice-section">
                                 {whoWeAre.practice.map((item, key) => (

@@ -145,7 +145,7 @@ function Work({ work, hideEvent }) {
                     <div className="page-content">
                         <div className="page-section work-page-section">
                             <h3>{work.title}</h3>
-                            <p>{work.description}</p>
+                            <p dangerouslySetInnerHTML={{ __html: work.description }} />
                             <br />
                             <br />
                             <div className="work-section">
