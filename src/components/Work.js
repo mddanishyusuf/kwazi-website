@@ -183,7 +183,7 @@ function Work({ work, hideEvent }) {
                                                     <p>{activeProject.story}</p>
                                                 </div>
                                             </div>
-                                            {activeProject.projectBanner !== null && (
+                                            {activeProject.projectBanner !== '' && (
                                                 <div className="project-banner">
                                                     <img src={activeProject.projectBanner} alt="Project Banner" />
                                                 </div>
