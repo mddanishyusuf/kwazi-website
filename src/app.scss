@@ -526,6 +526,10 @@ h3 {
     }
 
     .content {
+      h3 {
+        padding: 0;
+        margin: 0;
+      }
       p {
         font-size: 14px;
       }
@@ -832,7 +836,7 @@ p {
     .details-header {
       display: grid;
       grid-template-columns: 30% 70%;
-
+      grid-gap: 30px;
       @media screen and (max-width: 800px) {
         grid-template-columns: 100%;
       }
@@ -844,8 +848,10 @@ p {
       .content {
         h3 {
           text-align: left;
-          display: inline-block;
+          display: block;
           align-self: center;
+          padding: 0px;
+          margin: 0px;
         }
       }
 

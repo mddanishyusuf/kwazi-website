@@ -178,7 +178,7 @@ function Work({ work, hideEvent, clickFromChild }) {
                                                 {/* <span>Back</span> */}
                                             </div>
                                             <div className="details-header">
-                                                <img src={activeProject.imageOnHover} alt={activeProject.name} />
+                                                <img src={activeProject.projectThumbnail} alt={activeProject.name} />
                                                 <div className="content">
                                                     <h3>{activeProject.name}</h3>
                                                     <small>
