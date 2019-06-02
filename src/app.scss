@@ -114,6 +114,10 @@ body {
           border: none;
           border-bottom: 1px solid #000;
           box-shadow: none;
+          @media screen and (max-width: 800px) {
+            width: 100%;
+
+          }
 
           &:focus {
             outline: none;
