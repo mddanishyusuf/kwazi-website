@@ -45,6 +45,14 @@ function Kwazi() {
         setWhichLayer(e.target.getAttribute('name'));
     }
 
+    function BlogModalClick(e) {
+        console.log('BlogModalClick');
+        e.preventDefault();
+        setHideBox(true);
+        console.log(e.target.getAttribute('name'));
+        setWhichLayer(e.target.getAttribute('name'));
+    }
+
     function hideLayer() {
         setHideBox(false);
         setTimeout(() => {
@@ -75,15 +83,8 @@ function Kwazi() {
                                     </span>
                                 </div>
                                 <div className="blog-link">
-                                    <span>
-                                        <a
-                                            href="https://medium.com/@kwaziverse"
-                                            target="_blank"
-                                            rel="noreferrer noopener"
-                                        >
-                                            {' '}
-                                            :{' '}
-                                        </a>
+                                    <span name="BlogModal" onClick={BlogModalClick} role="presentation">
+                                        :
                                     </span>
                                 </div>
                                 <div>
@@ -184,6 +185,29 @@ function Kwazi() {
                 <div className="i-am-board section four" id="modal-container">
                     <div className="section-inner modal-background">
                         <ContactUs {...data} hideEvent={hideLayer} />
+                    </div>
+                </div>
+            ) : (
+                ''
+            )}
+
+            {whichLayer === 'BlogModal' ? (
+                <div className="i-am-board section four" id="modal-container">
+                    <div className="section-inner modal-background redirct-box">
+                        <div className="blog-modal">
+                            <div className="close-modal" onClick={hideLayer}>
+                                <img src={require(`./static/images/close-icon.png`)} alt="close page" />
+                            </div>
+                            <p>
+                                Hey, that's our blog. it will take you to our page on Medium. Click below to read
+                                something insightful
+                            </p>
+                            <div className="take-me">
+                                <a href="https://medium.com/@kwaziverse" target="_blank">
+                                    Take Me There
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             ) : (

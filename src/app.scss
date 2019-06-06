@@ -1188,3 +1188,38 @@ opacity:0;
   align-items: center;
   height: 100%;
 }
+
+
+.redirct-box {
+  display: flex;
+  max-width: 500px;
+  margin: 0px auto;
+  font-family: 'gothicm';
+  .blog-modal {
+    text-align: center;
+    border: 1px solid #000;
+    padding: 10px;
+    align-self: center;
+    .close-modal {
+      display: inline-block;
+    position: absolute;
+    right: 0;
+    padding-right: 10px;
+    cursor: pointer;
+    }
+    .take-me {
+      font-family: 'gothicm';
+    background-color: #000;
+    color: #fff;
+    border: 0;
+    font-size: 1rem;
+    padding: 5px 15px;
+    cursor: pointer;
+    display: inline-block;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    }
+  }
+}
